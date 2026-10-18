@@ -261,7 +261,7 @@ export default function Hero() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-28">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Text content */}
-          <div className="max-w-xl">
+          <div className="max-w-xl mx-auto lg:mx-0 flex flex-col items-center lg:items-start text-center lg:text-left">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -276,7 +276,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-display text-3xl sm:text-5xl lg:text-[3.25rem] font-bold text-[#252d3a] leading-[1.15] tracking-tight mb-4 sm:mb-6"
+              className="font-display text-3xl sm:text-5xl lg:text-[3.25rem] font-bold text-[#252d3a] leading-[1.15] tracking-tight mb-4 sm:mb-6 text-center lg:text-left"
             >
               Technology That Keeps Your Business{" "}
               <span
@@ -295,7 +295,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.35 }}
-              className="text-base sm:text-lg text-[#64748b] leading-relaxed mb-6 sm:mb-8"
+              className="text-base sm:text-lg text-[#64748b] leading-relaxed mb-6 sm:mb-8 text-center lg:text-left max-w-lg lg:max-w-none"
             >
               Reliable IT systems, connected teams, and uninterrupted operations.
               We partner with Melbourne businesses to deliver technology
@@ -306,18 +306,18 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="flex flex-col sm:flex-row gap-3"
+              className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto justify-center lg:justify-start"
             >
               <button
                 onClick={() => handleScrollTo("contact")}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-[#1a6db5] text-white text-sm font-semibold hover:bg-[#155a97] transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a6db5] focus-visible:ring-offset-2 group shadow-xs"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-[#1a6db5] text-white text-sm font-semibold hover:bg-[#155a97] transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a6db5] focus-visible:ring-offset-2 group shadow-xs w-full sm:w-auto"
               >
                 Get a Quote
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
               </button>
               <button
                 onClick={() => handleScrollTo("services")}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg border border-[#e2e8f0] bg-white text-[#252d3a] text-sm font-semibold hover:border-[#1a6db5] hover:text-[#1a6db5] transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a6db5] focus-visible:ring-offset-2"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg border border-[#e2e8f0] bg-white text-[#252d3a] text-sm font-semibold hover:border-[#1a6db5] hover:text-[#1a6db5] transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a6db5] focus-visible:ring-offset-2 w-full sm:w-auto"
               >
                 Explore Our Services
               </button>
@@ -328,7 +328,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.7 }}
-              className="mt-8 sm:mt-10 flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm text-[#64748b]"
+              className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-xs sm:text-sm text-[#64748b]"
             >
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-[#3a9e6a]" />
