@@ -258,15 +258,15 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-28">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Text content */}
           <div className="max-w-xl">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1a6db5]/25 bg-blue-50/80 text-[#1a6db5] text-xs font-semibold tracking-wide uppercase mb-6 shadow-xs"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1a6db5]/25 bg-blue-50/80 text-[#1a6db5] text-xs font-semibold tracking-wide uppercase mb-5 sm:mb-6 shadow-xs"
             >
               <MapPin size={14} className="text-[#3a9e6a] shrink-0" strokeWidth={2.2} />
               Melbourne, Australia
@@ -276,7 +276,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-display text-4xl sm:text-5xl lg:text-[3.25rem] font-bold text-[#252d3a] leading-[1.12] tracking-tight mb-6"
+              className="font-display text-3xl sm:text-5xl lg:text-[3.25rem] font-bold text-[#252d3a] leading-[1.15] tracking-tight mb-4 sm:mb-6"
             >
               Technology That Keeps Your Business{" "}
               <span
@@ -295,11 +295,11 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.35 }}
-              className="text-lg text-[#64748b] leading-relaxed mb-8"
+              className="text-base sm:text-lg text-[#64748b] leading-relaxed mb-6 sm:mb-8"
             >
               Reliable IT systems, connected teams, and uninterrupted operations.
-              Global IT Technology partners with Melbourne businesses to deliver
-              technology infrastructure that supports growth and reduces downtime.
+              We partner with Melbourne businesses to deliver technology
+              infrastructure that eliminates downtime and powers growth.
             </motion.p>
 
             <motion.div
@@ -310,7 +310,7 @@ export default function Hero() {
             >
               <button
                 onClick={() => handleScrollTo("contact")}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-[#1a6db5] text-white text-sm font-semibold hover:bg-[#155a97] transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a6db5] focus-visible:ring-offset-2 group"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-[#1a6db5] text-white text-sm font-semibold hover:bg-[#155a97] transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a6db5] focus-visible:ring-offset-2 group shadow-xs"
               >
                 Get a Quote
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
@@ -328,7 +328,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.7 }}
-              className="mt-10 flex flex-wrap items-center gap-5 sm:gap-6 text-sm text-[#94a3b8]"
+              className="mt-8 sm:mt-10 flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm text-[#64748b]"
             >
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-[#3a9e6a]" />

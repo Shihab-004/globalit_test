@@ -6,36 +6,35 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-20 sm:py-28 bg-[#252d3a]"
+      className="py-12 sm:py-20 lg:py-24 bg-[#252d3a]"
       aria-label="About Global IT Technology"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left — visual */}
           <FadeIn direction="left">
             <div className="relative">
               {/* Main card */}
-              <div className="rounded-2xl overflow-hidden bg-[#3a4556] border border-white/10 p-8 sm:p-10">
-                <div className="flex items-center gap-4 mb-8">
+              <div className="rounded-2xl overflow-hidden bg-[#3a4556] border border-white/10 p-5 sm:p-8 md:p-10">
+                <div className="flex items-center gap-4 mb-6 sm:mb-8">
                   <Image
                     src="/logo.webp"
                     alt="Global IT Technology"
                     width={180}
                     height={42}
-                    className="h-10 w-auto brightness-0 invert"
+                    className="h-9 sm:h-10 w-auto brightness-0 invert"
                   />
                 </div>
 
-                <blockquote className="text-white/90 text-lg leading-relaxed font-light mb-8 border-l-2 border-[#3a9e6a] pl-5">
-                  &ldquo;We started Global IT Technology because we saw how often
-                  businesses were sold technology they didn&apos;t need, or left without
-                  proper support when things went wrong. Our goal is to be the IT
-                  partner that actually looks out for your interests.&rdquo;
+                <blockquote className="text-white/90 text-base sm:text-lg leading-relaxed font-light mb-6 sm:mb-8 border-l-2 border-[#3a9e6a] pl-4 sm:pl-5">
+                  &ldquo;We started Global IT Technology because businesses were
+                  tired of being sold technology they didn&apos;t need. Our goal is to be
+                  the IT partner that genuinely looks out for your operations.&rdquo;
                 </blockquote>
 
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#1a6db5] to-[#3a9e6a] flex items-center justify-center">
-                    <span className="text-white font-display font-bold text-lg">G</span>
+                <div className="flex items-center gap-3.5 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-[#1a6db5] to-[#3a9e6a] flex items-center justify-center shrink-0">
+                    <span className="text-white font-display font-bold text-base sm:text-lg">G</span>
                   </div>
                   <div>
                     <div className="text-white font-semibold text-sm">Founder &amp; Director</div>
@@ -63,28 +62,24 @@ export default function About() {
 
           {/* Right — content */}
           <FadeIn direction="right" delay={0.1}>
-            <p className="text-sm font-semibold tracking-widest uppercase text-[#3a9e6a] mb-3">
+            <p className="text-xs sm:text-sm font-semibold tracking-widest uppercase text-[#3a9e6a] mb-2 sm:mb-3">
               About Us
             </p>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-white leading-tight mb-6">
+            <h2 className="font-display text-2xl sm:text-4xl font-bold text-white leading-tight mb-4 sm:mb-6">
               An Australian Family Business Built on Honest Advice.
             </h2>
 
-            <div className="space-y-4 text-white/80 leading-relaxed mb-8">
+            <div className="text-white/80 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">
               <p>
                 Founded in Melbourne, Global IT Technology brings two decades of
-                hands-on telecommunications and technology leadership to Victorian businesses.
-                Our focus is direct accountability — giving clients the same honest, pragmatic
-                guidance we would give our own team.
-              </p>
-              <p>
-                As a family-owned company, you communicate directly with experienced technical
-                leads dedicated to long-term reliability and business continuity.
+                telecommunications and IT leadership to Victorian businesses. You
+                communicate directly with experienced technical leads dedicated to
+                system reliability and long-term business continuity.
               </p>
             </div>
 
             {/* Feature highlights */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               {[
                 { icon: Users, label: "Direct Accountability", sub: "No layers of account managers" },
                 { icon: Award, label: "20 Years Expertise", sub: "Telco & infrastructure depth" },
@@ -93,7 +88,7 @@ export default function About() {
               ].map((item) => (
                 <div
                   key={item.label}
-                  className="flex items-start gap-3 p-4 rounded-lg bg-white/5 border border-white/10"
+                  className="flex items-start gap-3 p-3.5 sm:p-4 rounded-lg bg-white/5 border border-white/10"
                 >
                   <item.icon size={16} className="text-[#3a9e6a] mt-0.5 shrink-0" strokeWidth={1.75} />
                   <div>

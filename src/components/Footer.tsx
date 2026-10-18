@@ -13,8 +13,8 @@ export default function Footer() {
   return (
     <footer className="bg-[#1a2233] text-white" role="contentinfo">
       {/* Main footer */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
           {/* Column 1 — Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Image

@@ -59,33 +59,32 @@ export default function ContactForm() {
   };
 
   const inputClass = (hasError?: boolean) =>
-    `w-full px-4 py-3 rounded-lg border text-sm text-[#252d3a] bg-white placeholder-[#94a3b8]
+    `w-full px-4 py-3 rounded-lg border text-base sm:text-sm text-[#252d3a] bg-white placeholder-[#94a3b8]
     focus:outline-none focus:ring-2 focus:ring-[#1a6db5] focus:border-[#1a6db5] transition-colors
     ${hasError ? "border-red-400 bg-red-50" : "border-[#e2e8f0] hover:border-[#cbd5e1]"}`;
 
   return (
     <section
       id="contact"
-      className="py-20 sm:py-28 bg-[#f8fafc]"
+      className="py-12 sm:py-20 lg:py-24 bg-[#f8fafc]"
       aria-label="Contact and get a quote"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
+        <div className="grid lg:grid-cols-5 gap-10 lg:gap-16">
           {/* Left — contact info */}
           <FadeIn direction="left" className="lg:col-span-2">
-            <p className="text-sm font-semibold tracking-widest uppercase text-[#1a6db5] mb-3">
+            <p className="text-xs sm:text-sm font-semibold tracking-widest uppercase text-[#1a6db5] mb-2 sm:mb-3">
               Get in Touch
             </p>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#252d3a] leading-tight mb-4">
+            <h2 className="font-display text-2xl sm:text-4xl font-bold text-[#252d3a] leading-tight mb-3 sm:mb-4">
               Let&apos;s Talk About Your Technology.
             </h2>
-            <p className="text-[#64748b] leading-relaxed mb-10">
+            <p className="text-[#64748b] text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">
               Tell us about your business and current challenges. We&apos;ll
-              respond promptly with honest, practical advice — no sales pressure,
-              no commitment required.
+              respond promptly with honest, practical advice — no sales pressure.
             </p>
 
-            <div className="space-y-5">
+            <div className="space-y-4 sm:space-y-5">
               <a
                 href={`tel:${COMPANY.phoneIntl}`}
                 className="flex items-start gap-4 group"
@@ -130,8 +129,8 @@ export default function ContactForm() {
             </div>
 
             {/* Response note */}
-            <div className="mt-10 p-5 rounded-xl bg-white border border-[#e2e8f0]">
-              <p className="text-sm text-[#64748b]">
+            <div className="mt-6 sm:mt-10 p-4 sm:p-5 rounded-xl bg-white border border-[#e2e8f0]">
+              <p className="text-xs sm:text-sm text-[#64748b]">
                 <span className="font-semibold text-[#252d3a]">Typical response time:</span>{" "}
                 We aim to respond to all enquiries within one business day.
               </p>
@@ -140,7 +139,7 @@ export default function ContactForm() {
 
           {/* Right — form */}
           <FadeIn direction="right" delay={0.1} className="lg:col-span-3">
-            <div className="bg-white rounded-2xl border border-[#e2e8f0] shadow-[0_4px_24px_-4px_rgb(0_0_0/0.08)] p-8 sm:p-10">
+            <div className="bg-white rounded-2xl border border-[#e2e8f0] shadow-[0_4px_24px_-4px_rgb(0_0_0/0.08)] p-5 sm:p-8 md:p-10">
               {submitState === "success" ? (
                 <div className="flex flex-col items-center justify-center text-center py-12 gap-4">
                   <div className="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center">

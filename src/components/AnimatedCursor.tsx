@@ -119,7 +119,7 @@ export default function AnimatedCursor() {
 
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-[9999999] overflow-hidden select-none"
+      className="pointer-events-none fixed inset-0 z-[9999999] overflow-hidden select-none hidden md:block"
       style={{ opacity: isVisible ? 1 : 0, transition: "opacity 0.2s ease" }}
       aria-hidden="true"
     >

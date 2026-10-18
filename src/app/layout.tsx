@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -14,6 +14,13 @@ const plusJakarta = Plus_Jakarta_Sans({
   display: "swap",
   weight: ["400", "500", "600", "700", "800"],
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#ffffff",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://globalit.technology"),
@@ -65,11 +72,11 @@ export default function RootLayout({
       <head>
         <style
           dangerouslySetInnerHTML={{
-            __html: `*, *::before, *::after, html, body, a, button, input, textarea, select, label, [role="button"], .cursor-pointer { cursor: none !important; }`,
+            __html: `@media (pointer: fine) { *, *::before, *::after, html, body, a, button, input, textarea, select, label, [role="button"], .cursor-pointer { cursor: none !important; } }`,
           }}
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased overflow-x-hidden">{children}</body>
     </html>
   );
 }

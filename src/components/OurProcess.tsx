@@ -8,21 +8,21 @@ export default function OurProcess() {
   return (
     <section
       id="process"
-      className="py-20 sm:py-28 bg-white"
+      className="py-12 sm:py-20 lg:py-24 bg-white"
       aria-label="Our process"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <FadeIn className="max-w-2xl mb-16">
-          <p className="text-sm font-semibold tracking-widest uppercase text-[#1a6db5] mb-3">
+        <FadeIn className="max-w-2xl mb-10 sm:mb-16">
+          <p className="text-xs sm:text-sm font-semibold tracking-widest uppercase text-[#1a6db5] mb-2 sm:mb-3">
             How We Work
           </p>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#252d3a] leading-tight mb-4">
+          <h2 className="font-display text-2xl sm:text-4xl font-bold text-[#252d3a] leading-tight mb-3 sm:mb-4">
             A Clear Path from Problem to Solution.
           </h2>
-          <p className="text-[#64748b] text-lg leading-relaxed">
-            Every engagement follows the same deliberate process — from
-            understanding your situation through to a tested, working outcome.
+          <p className="text-[#64748b] text-base sm:text-lg leading-relaxed">
+            Every engagement follows a deliberate 4-step process to ensure
+            reliable, tested outcomes.
           </p>
         </FadeIn>
 
@@ -54,7 +54,7 @@ export default function OurProcess() {
                     {step.number}
                   </span>
                 </div>
-                <h3 className="font-display text-sm font-semibold text-[#252d3a] mb-3 leading-snug">
+                <h3 className="font-display text-sm font-semibold text-[#252d3a] mb-2 leading-snug">
                   {step.title}
                 </h3>
                 <p className="text-xs text-[#64748b] leading-relaxed">
@@ -67,23 +67,23 @@ export default function OurProcess() {
           {/* Mobile — vertical list */}
           <div className="lg:hidden space-y-0 relative">
             {/* Connector */}
-            <div className="absolute left-[1.625rem] top-8 bottom-8 w-px bg-gradient-to-b from-[#1a6db5] to-[#3a9e6a]" aria-hidden="true" />
+            <div className="absolute left-[1.25rem] sm:left-[1.625rem] top-6 bottom-6 w-px bg-gradient-to-b from-[#1a6db5] to-[#3a9e6a]" aria-hidden="true" />
 
             {PROCESS_STEPS.map((step, index) => (
               <motion.div
                 key={step.number}
                 variants={staggerItemVariants}
-                className="relative flex gap-6 pb-10 last:pb-0"
+                className="relative flex gap-3.5 sm:gap-6 pb-6 sm:pb-10 last:pb-0"
               >
                 {/* Circle */}
                 <div
-                  className="relative z-10 w-[3.25rem] h-[3.25rem] shrink-0 rounded-full border-2 flex items-center justify-center bg-white"
+                  className="relative z-10 w-10 h-10 sm:w-[3.25rem] sm:h-[3.25rem] shrink-0 rounded-full border-2 flex items-center justify-center bg-white"
                   style={{
                     borderColor: index < 2 ? "#1a6db5" : "#3a9e6a",
                   }}
                 >
                   <span
-                    className="font-display text-sm font-bold"
+                    className="font-display text-xs sm:text-sm font-bold"
                     style={{ color: index < 2 ? "#1a6db5" : "#3a9e6a" }}
                   >
                     {step.number}
@@ -91,11 +91,11 @@ export default function OurProcess() {
                 </div>
 
                 {/* Content */}
-                <div className="pt-3">
-                  <h3 className="font-display text-base font-semibold text-[#252d3a] mb-2">
+                <div className="pt-2">
+                  <h3 className="font-display text-sm sm:text-base font-semibold text-[#252d3a] mb-1">
                     {step.title}
                   </h3>
-                  <p className="text-sm text-[#64748b] leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#64748b] leading-relaxed">
                     {step.description}
                   </p>
                 </div>
