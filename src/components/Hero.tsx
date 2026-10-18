@@ -2,7 +2,7 @@
 
 import { useCallback } from "react";
 import { motion } from "motion/react";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, MapPin } from "lucide-react";
 
 // Bespoke SVG network/infrastructure illustration
 function NetworkIllustration() {
@@ -266,9 +266,9 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1a6db5]/20 bg-blue-50 text-[#1a6db5] text-xs font-semibold tracking-wide uppercase mb-6"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1a6db5]/25 bg-blue-50/80 text-[#1a6db5] text-xs font-semibold tracking-wide uppercase mb-6 shadow-xs"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#3a9e6a] animate-pulse" />
+              <MapPin size={14} className="text-[#3a9e6a] shrink-0" strokeWidth={2.2} />
               Melbourne, Australia
             </motion.div>
 
@@ -328,19 +328,19 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.7 }}
-              className="mt-10 flex items-center gap-6 text-sm text-[#94a3b8]"
+              className="mt-10 flex flex-wrap items-center gap-5 sm:gap-6 text-sm text-[#94a3b8]"
             >
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-[#3a9e6a]" />
-                <span>Family-owned</span>
+                <span>Australian Family-Owned</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-[#1a6db5]" />
-                <span>20+ years experience</span>
+                <span>20+ Years Experience</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-[#3a9e6a]" />
-                <span>Melbourne-based</span>
+                <span>ACMA Registered</span>
               </div>
             </motion.div>
           </div>

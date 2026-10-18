@@ -70,36 +70,26 @@ export default function About() {
               An Australian Family Business Built on Honest Advice.
             </h2>
 
-            <div className="space-y-4 text-white/70 leading-relaxed mb-8">
+            <div className="space-y-4 text-white/80 leading-relaxed mb-8">
               <p>
-                Global IT Technology was founded in Melbourne by a director who
-                spent 20 years working across telecommunications and technology in
-                different industries. That first-hand experience across both sides
-                of the technology relationship shaped the company&apos;s approach: give
-                clients the same advice you would give a family member.
+                Founded in Melbourne, Global IT Technology brings two decades of
+                hands-on telecommunications and technology leadership to Victorian businesses.
+                Our focus is direct accountability — giving clients the same honest, pragmatic
+                guidance we would give our own team.
               </p>
               <p>
-                We are a family-owned business, and that means the people you
-                speak to are the same people responsible for the outcomes. We do
-                not have layers of account managers or offshore helpdesks — just a
-                focused team of experienced professionals who take direct
-                accountability for the work we do.
-              </p>
-              <p>
-                Our client relationships are designed to last. We measure our
-                success not by the size of individual engagements, but by whether
-                our clients&apos; technology genuinely serves their business over the
-                long term.
+                As a family-owned company, you communicate directly with experienced technical
+                leads dedicated to long-term reliability and business continuity.
               </p>
             </div>
 
             {/* Feature highlights */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { icon: Users, label: "Family-Owned Business", sub: "Founded in Melbourne" },
-                { icon: Award, label: "20 Years Experience", sub: "Telecoms & technology" },
-                { icon: Clock, label: "Long-Term Relationships", sub: "Not one-off transactions" },
-                { icon: MapPin, label: "Melbourne-Based Team", sub: "Local, accessible support" },
+                { icon: Users, label: "Direct Accountability", sub: "No layers of account managers" },
+                { icon: Award, label: "20 Years Expertise", sub: "Telco & infrastructure depth" },
+                { icon: Clock, label: "Long-Term Partnerships", sub: "Pragmatic, non-transactional" },
+                { icon: MapPin, label: "Local Melbourne Team", sub: "Accessible on-site support" },
               ].map((item) => (
                 <div
                   key={item.label}

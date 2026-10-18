@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 const NAV_LINKS = [
@@ -29,7 +29,7 @@ export default function Navigation() {
         const el = document.getElementById(id);
         if (el) {
           const rect = el.getBoundingClientRect();
-          if (rect.top <= 100 && rect.bottom >= 100) {
+          if (rect.top <= 120 && rect.bottom >= 120) {
             current = id;
           }
         }
@@ -42,20 +42,27 @@ export default function Navigation() {
   }, []);
 
   const handleNavClick = useCallback(
-    (href: string) => {
+    (href: string, e?: React.MouseEvent) => {
+      if (e) {
+        e.preventDefault();
+      }
       setMobileOpen(false);
       const id = href.replace("#", "");
-      const el = document.getElementById(id);
-      if (el) {
-        const offset = 64;
-        const top = el.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: "smooth" });
-      }
+
+      // Small delay so menu collapse doesn't cancel browser smooth scroll
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+          window.location.hash = href;
+        }
+      }, 80);
     },
     []
   );
 
-  // Close mobile menu on escape
+  // Close mobile menu on escape key
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") setMobileOpen(false);
@@ -67,8 +74,8 @@ export default function Navigation() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-[0_1px_0_0_rgb(0_0_0/0.06)]"
+        isScrolled || mobileOpen
+          ? "bg-white/98 backdrop-blur-md shadow-[0_2px_12px_0_rgb(0_0_0/0.06)]"
           : "bg-white/90 backdrop-blur-sm"
       }`}
       role="banner"
@@ -100,9 +107,10 @@ export default function Navigation() {
               const sectionId = link.href.replace("#", "");
               const isActive = activeSection === sectionId;
               return (
-                <button
+                <a
                   key={link.href}
-                  onClick={() => handleNavClick(link.href)}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(link.href, e)}
                   className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-150 cursor-pointer ${
                     isActive
                       ? "text-[#1a6db5] bg-blue-50"
@@ -111,30 +119,32 @@ export default function Navigation() {
                   aria-current={isActive ? "page" : undefined}
                 >
                   {link.label}
-                </button>
+                </a>
               );
             })}
           </div>
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <button
-              onClick={() => handleNavClick("#contact")}
+            <a
+              href="#contact"
+              onClick={(e) => handleNavClick("#contact", e)}
               className="px-5 py-2 rounded-lg bg-[#1a6db5] text-white text-sm font-semibold hover:bg-[#155a97] transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a6db5] focus-visible:ring-offset-2"
             >
               Get a Quote
-            </button>
+            </a>
           </div>
 
           {/* Mobile toggle */}
           <button
+            type="button"
             onClick={() => setMobileOpen((v) => !v)}
-            className="md:hidden p-2 rounded-md text-[#3a4556] hover:text-[#1a6db5] hover:bg-slate-100 transition-colors"
+            className="md:hidden w-10 h-10 flex items-center justify-center rounded-lg border border-[#e2e8f0] bg-white text-[#252d3a] hover:text-[#1a6db5] hover:border-[#1a6db5]/40 active:scale-95 transition-all cursor-pointer"
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
@@ -146,26 +156,43 @@ export default function Navigation() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2, ease: "easeInOut" }}
-              className="md:hidden overflow-hidden border-t border-[#e2e8f0]"
+              transition={{ duration: 0.22, ease: "easeOut" }}
+              className="md:hidden overflow-hidden border-t border-[#e2e8f0] bg-white shadow-2xl rounded-b-2xl"
             >
-              <div className="py-3 space-y-1">
-                {NAV_LINKS.map((link) => (
-                  <button
-                    key={link.href}
-                    onClick={() => handleNavClick(link.href)}
-                    className="block w-full text-left px-4 py-3 text-sm font-medium text-[#3a4556] hover:text-[#1a6db5] hover:bg-slate-50 rounded-md transition-colors cursor-pointer"
-                  >
-                    {link.label}
-                  </button>
-                ))}
-                <div className="pt-2 border-t border-[#e2e8f0] mt-2">
-                  <button
-                    onClick={() => handleNavClick("#contact")}
-                    className="w-full py-3 rounded-lg bg-[#1a6db5] text-white text-sm font-semibold hover:bg-[#155a97] transition-colors cursor-pointer"
+              <div className="p-4 space-y-1.5">
+                {NAV_LINKS.map((link) => {
+                  const sectionId = link.href.replace("#", "");
+                  const isActive = activeSection === sectionId;
+                  return (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      onClick={(e) => handleNavClick(link.href, e)}
+                      className={`flex items-center justify-between w-full px-4 py-3.5 rounded-xl text-base font-semibold transition-all cursor-pointer ${
+                        isActive
+                          ? "bg-blue-50 text-[#1a6db5]"
+                          : "text-[#252d3a] hover:bg-slate-50 hover:text-[#1a6db5] active:bg-blue-50"
+                      }`}
+                    >
+                      <span>{link.label}</span>
+                      <ArrowRight
+                        size={16}
+                        className={`transition-transform ${
+                          isActive ? "text-[#1a6db5] translate-x-1" : "text-[#94a3b8]"
+                        }`}
+                      />
+                    </a>
+                  );
+                })}
+                <div className="pt-3 border-t border-[#e2e8f0] mt-3">
+                  <a
+                    href="#contact"
+                    onClick={(e) => handleNavClick("#contact", e)}
+                    className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-[#1a6db5] active:bg-[#155a97] text-white text-base font-semibold shadow-md shadow-blue-500/20 transition-all cursor-pointer"
                   >
                     Get a Quote
-                  </button>
+                    <ArrowRight size={16} />
+                  </a>
                 </div>
               </div>
             </motion.div>

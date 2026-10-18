@@ -34,12 +34,6 @@ export default function TrustMetrics() {
             </div>
           ))}
         </StaggerContainer>
-
-        <FadeIn className="mt-8 text-center">
-          <p className="text-xs text-[#64748b]">
-            Figures represent the company&apos;s own reported metrics and are provided as general claims.
-          </p>
-        </FadeIn>
       </div>
     </section>
   );
